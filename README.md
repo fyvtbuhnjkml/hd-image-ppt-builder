@@ -13,15 +13,18 @@ Convert PowerPoint slides to high-resolution images, then rebuild as a layout-lo
 
 ### Why This Tool Exists
 
-Conference presentations often break on the venue computer because of:
+**PowerPoint's built-in export produces low-resolution images.** When you use "Save As → PNG" or slide export, PowerPoint caps the output at a low DPI — text becomes blurry, formulas lose detail, and charts look pixelated when displayed on large screens or 4K displays. There is no built-in option to control the export resolution.
+
+Conference presentations also break on the venue computer because of:
 - Missing fonts on the projection machine
 - Different PowerPoint versions changing line breaks/spacing
 - Image scaling differences causing misalignment
 
-This tool renders every slide as a high-resolution image, then rebuilds a pure-image PPTX — **zero layout shift** — while **preserving speaker notes verbatim**.
+This tool bypasses PowerPoint's resolution cap by calling the COM engine directly at any target size (up to 5K), then rebuilds a pure-image PPTX — **zero layout shift** — while **preserving speaker notes verbatim**.
 
 ### Features
 
+- **High-resolution bypass**: Export at up to 5120×2880 — far beyond PowerPoint's built-in export quality
 - **Layout-lock**: Every slide becomes a single full-bleed image — nothing can shift
 - **Speaker notes preserved**: Notes are copied verbatim to the new file
 - **Resolution selectable**: 2K (2560×1440), 4K (3840×2160), or 5K (5120×2880)
@@ -72,15 +75,18 @@ pyinstaller --onefile --noconsole --hidden-import win32com.client --hidden-impor
 
 ### 为什么需要这个工具
 
-在会议现场，你精心排版的 PPT 经常因为以下原因"跑版"：
+**PowerPoint 自带的导出功能分辨率极低。** 使用"另存为 PNG"或幻灯片导出时，PowerPoint 将输出限制在低 DPI——文字模糊、公式细节丢失、图表在大屏或 4K 显示器上严重像素化，而且没有任何选项可以控制导出分辨率。这正是制作本工具的直接原因。
+
+会议现场的排版"跑版"问题：
 - 投影电脑缺少你使用的字体
 - PowerPoint 版本不同导致自动换行/行距变化
 - 图片缩放策略不同导致偏移
 
-本工具把每一页"烧"成一张高清图片，然后重建一个纯图片 PPT——**排版零偏移**，同时**完整保留演讲者备注**，演讲者视图正常使用。
+本工具绕过 PowerPoint 的分辨率限制，通过直接调用 COM 引擎以任意目标尺寸（最高 5K）渲染，然后重建纯图 PPTX——**排版零偏移**，同时**完整保留演讲者备注**。
 
 ### 功能
 
+- **高清突破**：导出分辨率最高 5120×2880——远超 PowerPoint 自带导出的画质上限
 - **排版锁定**：每页变为一张整页图片，文字/图片/公式位置绝对不会偏移
 - **备注逐字保留**：演讲者视图正常使用
 - **分辨率可选**：2K (2560×1440)、4K (3840×2160)、5K (5120×2880)
