@@ -29,10 +29,6 @@ This tool renders every slide as a high-resolution image, then rebuilds a pure-i
 - **No source modification**: Reads your file, never writes to it
 - **One-click EXE available**: No Python environment needed for end users
 
-### Screenshot
-
-*(Add a screenshot of the GUI here)*
-
 ### Requirements
 
 - Windows
@@ -45,7 +41,7 @@ This tool renders every slide as a high-resolution image, then rebuilds a pure-i
 ```
 python hd_pptx_gui.py
 ```
-Or use the standalone `HD_PPT_Builder.exe` (built with PyInstaller).
+Or download the standalone `HD_PPT_Builder.exe` from [Releases](https://github.com/fyvtbuhnjkml/hd-image-ppt-builder/releases).
 
 #### CLI
 ```bash
@@ -61,17 +57,6 @@ python hd_pptx.py "presentation.pptx" "output.pptx" --dpi 3840 # 4K
 4. Inserts each PNG as a full-bleed picture (locked layout)
 5. Copies speaker notes verbatim from the original
 6. Saves the output — source file untouched
-
-### Comparison with Similar Tools
-
-| Feature | This Tool | [pptxtoimages](https://github.com/brkcvlk/pptxtoimages) | [MinerU2PPT](https://github.com/JuniverseCoder/MinerU2PPT) |
-|---|---|---|---|
-| Export slides as images | ✅ | ✅ | ❌ (reverse: image→PPT) |
-| Rebuild as PPTX (layout-lock) | ✅ | ❌ | ❌ |
-| Preserve speaker notes | ✅ | ❌ | ❌ |
-| Resolution selectable | ✅ (2K/4K/5K) | ❌ | N/A |
-| Uses PowerPoint COM (vector quality) | ✅ | ❌ (LibreOffice) | ❌ |
-| Windows GUI included | ✅ | ❌ | ❌ |
 
 ### Build EXE
 
@@ -109,7 +94,7 @@ pyinstaller --onefile --noconsole --hidden-import win32com.client --hidden-impor
 ```
 python hd_pptx_gui.py
 ```
-或直接使用打包好的 `HD_PPT_Builder.exe`。
+或从 [Releases](https://github.com/fyvtbuhnjkml/hd-image-ppt-builder/releases) 下载 `HD_PPT_Builder.exe`。
 
 #### 命令行
 ```bash
